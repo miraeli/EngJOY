@@ -1,0 +1,1 @@
+-IC:/EngJOY/EngJOY/tests/.. -IC:/EngJOY/EngJOY/tests -isystem C:/Qt/6.9.2/mingw_64/include/QtCore -isystem C:/Qt/6.9.2/mingw_64/include -isystem "C:/Qt/6.9.2/mingw_64/mkspecs/win32-g++"

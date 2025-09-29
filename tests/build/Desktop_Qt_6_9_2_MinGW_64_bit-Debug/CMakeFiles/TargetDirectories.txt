@@ -1,0 +1,3 @@
+C:/EngJOY/EngJOY/tests/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/EngJOY_tests.dir
+C:/EngJOY/EngJOY/tests/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/EngJOY/EngJOY/tests/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir

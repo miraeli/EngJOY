@@ -1,0 +1,5 @@
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/EngJOY.dir
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/EngJOY_autogen_timestamp_deps.dir
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/EngJOY_autogen.dir

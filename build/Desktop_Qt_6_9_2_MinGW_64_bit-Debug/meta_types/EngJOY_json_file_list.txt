@@ -1,0 +1,4 @@
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/EngJOY_autogen/include/../EWIEGA46WW/moc_deckeditor.cpp.json
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/EngJOY_autogen/include/../EWIEGA46WW/moc_learnmode.cpp.json
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/EngJOY_autogen/include/../EWIEGA46WW/moc_mainwindow.cpp.json
+C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/EngJOY_autogen/include/../EWIEGA46WW/moc_testmode.cpp.json
