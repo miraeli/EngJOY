@@ -11,16 +11,13 @@ DeckEditor::DeckEditor(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::Window);
 
-    // Загружаем колоду из файла при запуске редактора
     m_deck = loadDeckFromFile(m_filename.toStdString());
 
-    // Настраиваем таблицу: 2 колонки (Слово и Перевод)
     ui->cardsTable->setColumnCount(2);
     QStringList headers;
     headers << "Английское слово" << "Перевод";
     ui->cardsTable->setHorizontalHeaderLabels(headers);
 
-    // Обновляем таблицу, чтобы показать загруженные карточки
     updateTable();
 }
 
@@ -29,7 +26,6 @@ DeckEditor::~DeckEditor()
     delete ui;
 }
 
-// Функция для обновления данных в таблице на экране
 void DeckEditor::updateTable() {
     ui->cardsTable->setRowCount(m_deck.size());
 

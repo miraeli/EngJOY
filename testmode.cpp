@@ -1,9 +1,9 @@
 #include "testmode.h"
 #include "ui_testmode.h"
-#include "filemanager.h" // для getRandomCard и перемешивания
+#include "filemanager.h"
 #include <QMessageBox>
-#include <algorithm> // для std::shuffle
-#include <random>    // для std::random_device
+#include <algorithm>
+#include <random>
 #include <QTimer>
 
 TestMode::TestMode(QWidget *parent) :
@@ -11,7 +11,7 @@ TestMode::TestMode(QWidget *parent) :
     ui(new Ui::TestMode)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::Window); // Делаем окно самостоятельным
+    this->setWindowFlags(Qt::Window);
 }
 
 TestMode::~TestMode()
@@ -27,9 +27,8 @@ void TestMode::startTest(const std::vector<Card>& deck) {
     }
 
     m_deck = deck;
-    m_testDeck = deck; // Копируем колоду
+    m_testDeck = deck;
 
-    // Перемешиваем колоду для теста
     std::random_device rd;
     std::mt19937 g(rd());
     std::shuffle(m_testDeck.begin(), m_testDeck.end(), g);
@@ -40,7 +39,6 @@ void TestMode::startTest(const std::vector<Card>& deck) {
 }
 
 void TestMode::nextQuestion() {
-    // Проверяем, не закончился ли тест
     if (m_currentQuestionIndex >= m_testDeck.size()) {
         showResults();
         return;
@@ -48,18 +46,16 @@ void TestMode::nextQuestion() {
 
     m_currentCard = m_testDeck[m_currentQuestionIndex];
 
-    // Обновляем интерфейс
     ui->wordLabel->setText(QString::fromStdString(m_currentCard.getEnglishWord()));
     ui->answerInput->clear();
     ui->resultLabel->setText("");
     ui->progressLabel->setText(QString("Вопрос %1 из %2").arg(m_currentQuestionIndex + 1).arg(m_testDeck.size()));
 
-    // Устанавливаем фокус на поле ввода
     ui->answerInput->setFocus();
 }
 
 void TestMode::on_submitButton_clicked() {
-    QString userAnswer = ui->answerInput->text().trimmed(); // Убираем лишние пробелы
+    QString userAnswer = ui->answerInput->text().trimmed();
     QString correctAnswer = QString::fromStdString(m_currentCard.getTranslation());
 
     if (userAnswer.isEmpty()) {
@@ -67,7 +63,6 @@ void TestMode::on_submitButton_clicked() {
         return;
     }
 
-    // Сравниваем ответы (без учета регистра)
     if (userAnswer.compare(correctAnswer, Qt::CaseInsensitive) == 0) {
         ui->resultLabel->setText("Верно! ✅");
         m_correctAnswers++;
@@ -77,7 +72,6 @@ void TestMode::on_submitButton_clicked() {
 
     m_currentQuestionIndex++;
 
-    // Ждем 1.5 секунды и переходим к следующему вопросу
     QTimer::singleShot(1500, this, &TestMode::nextQuestion);
 }
 
@@ -95,6 +89,5 @@ void TestMode::showResults() {
 }
 
 void TestMode::on_finishButton_clicked() {
-    // Показываем результаты досрочно
     showResults();
 }

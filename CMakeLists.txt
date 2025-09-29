@@ -5,7 +5,6 @@ project(EngJOY VERSION 0.1 LANGUAGES CXX)
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
 qt_standard_project_setup()
 
-# Создаем библиотеку вместо исполняемого файла
 qt_add_library(EngJOY STATIC
     main.cpp
     mainwindow.cpp

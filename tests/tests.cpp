@@ -1,7 +1,5 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
-
-// Подключаем наши файлы для тестирования
 #include "../card.h"
 #include "../filemanager.h"
 #include <vector>
@@ -35,16 +33,12 @@ TEST_CASE("Testing file manager functions") {
         original_deck.push_back(Card("cat", "кот"));
         original_deck.push_back(Card("dog", "собака"));
 
-        // Сохраняем колоду
         saveDeckToFile(original_deck, "test_deck.txt");
 
-        // Загружаем колоду
         std::vector<Card> loaded_deck = loadDeckFromFile("test_deck.txt");
 
-        // Проверяем количество карточек
         CHECK(loaded_deck.size() == original_deck.size());
 
-        // Проверяем содержимое (если есть карточки)
         if (!loaded_deck.empty()) {
             CHECK(loaded_deck[0].getEnglishWord() == "cat");
             CHECK(loaded_deck[0].getTranslation() == "кот");
@@ -60,10 +54,9 @@ TEST_CASE("Testing file manager functions") {
         std::vector<Card> empty_deck;
         saveDeckToFile(empty_deck, "empty_test.txt");
 
-        // Проверяем, что файл создался (исправленная строка)
         std::ifstream file("empty_test.txt");
         CHECK(file.good());
-        file.close(); // Закрываем файл
+        file.close();
     }
 }
 
@@ -76,7 +69,6 @@ TEST_CASE("Testing random card functions") {
     SUBCASE("Get random card returns valid card from deck") {
         Card random_card = getRandomCard(deck);
 
-        // Проверяем, что карточка из нашей колоды
         bool found = false;
         for (const auto& card : deck) {
             if (card.getEnglishWord() == random_card.getEnglishWord() &&
@@ -92,7 +84,6 @@ TEST_CASE("Testing random card functions") {
         Card correct_card = deck[0];
         std::vector<Card> choices = getRandomChoices(correct_card, deck, 3);
 
-        // Проверяем, что правильный ответ есть среди вариантов
         bool correct_found = false;
         for (const auto& choice : choices) {
             if (choice.getEnglishWord() == correct_card.getEnglishWord()) {
