@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_EngJOY_FILE C:/EngJOY/EngJOY/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/libEngJOY.a)
-set(__QT_DEPLOY_TARGET_EngJOY_TYPE STATIC_LIBRARY)

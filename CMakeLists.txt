@@ -35,7 +35,7 @@ if(WIN32)
 
     if(WINDEPLOYQT_EXECUTABLE)
         add_custom_command(TARGET EngJOY POST_BUILD
-            COMMAND "${WINDEPLOYQT_EXECUTABLE}" "$<TARGET_FILE:EngJOY>" --verbose 0 --no-compiler-runtime
+            COMMAND "${WINDEPLOYQT_EXECUTABLE}" "$<TARGET_FILE:EngJOY>" --verbose 0
         )
     endif()
 endif()
