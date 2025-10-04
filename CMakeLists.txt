@@ -27,6 +27,10 @@ qt_add_executable(EngJOY
 
 target_link_libraries(EngJOY PRIVATE Qt6::Core Qt6::Widgets)
 
+include(CTest)
+enable_testing()
+add_subdirectory(tests)
+
 if(WIN32)
     set_target_properties(EngJOY PROPERTIES WIN32_EXECUTABLE TRUE)
     get_target_property(QMAKE_EXECUTABLE Qt6::qmake IMPORTED_LOCATION)
