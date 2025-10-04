@@ -17,7 +17,8 @@ DeckEditor::DeckEditor(QWidget *parent) :
     QStringList headers;
     headers << "Английское слово" << "Перевод";
     ui->cardsTable->setHorizontalHeaderLabels(headers);
-
+    ui->cardsTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    ui->cardsTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     updateTable();
 }
 
